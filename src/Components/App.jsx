@@ -4,6 +4,7 @@ import DisplayName from './displayName';
 import NamesList from './namesList';
 import AlertUser from './alertUser';
 import SuperheroTable from './superheroTable';
+import CreateSuperhero from './createSuperhero';
 
 
 class App extends Component {
@@ -29,14 +30,30 @@ class App extends Component {
     }
   }
 
+  addSuperhero = (newSuperhero) => {
+    let newSuperheroObject = {
+      name: newSuperhero.name,
+      primaryAbility: newSuperhero.primaryAbility,
+      secondaryAbility: newSuperhero.secondaryAbility
+    }
+    let tempSuperheroes = this.state.superheroes;
+    tempSuperheroes.push(newSuperheroObject);
+    this.setState({
+      superheroes: tempSuperheroes
+    });
+  }
+
   render() {
     return(
-      <div className="container-fluid">
-        <DisplayName person={this.state.person} />
-        <NamesList names={this.state.names} />
-        <AlertUser />
-        <SuperheroTable superheroes={this.state.superheroes} />
-      </div>
+      <React.Fragment>
+        <div className="container-fluid">
+          <DisplayName person={this.state.person} />
+          <NamesList names={this.state.names} />
+          <AlertUser />
+          <SuperheroTable superheroes={this.state.superheroes} />
+          <CreateSuperhero addSuperhero={this.addSuperhero} />
+        </div>
+      </React.Fragment>
     );
   }
 }
