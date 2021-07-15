@@ -5,6 +5,7 @@ import NamesList from './namesList';
 import AlertUser from './alertUser';
 import SuperheroTable from './superheroTable';
 import CreateSuperhero from './createSuperhero';
+import Jokes from './jokes';
 
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
           <AlertUser />
           <SuperheroTable superheroes={this.state.superheroes} />
           <CreateSuperhero addSuperhero={this.addSuperhero} />
+          <Jokes />
         </div>
       </React.Fragment>
     );

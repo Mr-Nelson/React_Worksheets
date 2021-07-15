@@ -10,8 +10,8 @@ class CreateSuperhero extends Component {
             primaryAbility: '',
             secondaryAbility: ''
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange = (event) => {
@@ -41,7 +41,7 @@ class CreateSuperhero extends Component {
                 <center>
                     <h3>Add Your Superhero!</h3>
                 </center>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={(event) => this.handleSubmit(event)}>
                     <div className="row col-align">
                         <div className="col-md-4">
                             <label>Superhero's Name</label>
